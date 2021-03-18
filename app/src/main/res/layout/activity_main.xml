@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    app:backgroundTint="@null"
+    android:backgroundTintMode="@null">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="244dp"
+        android:layout_marginTop="-19dp"
+        android:layout_marginBottom="-23dp"
+        android:src="@drawable/logo2"></ImageView>
+
+    <TextView
+        android:textStyle="normal"
+        android:textSize="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:text="English • Melayu • Lainnya..."
+        android:id="@+id/bahasa"
+        android:textAlignment="center"></TextView>
+
+    <EditText
+        android:inputType="text"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="7dp"
+        android:paddingBottom="18dp"
+        android:id="@+id/username"
+        android:layout_below="@+id/bahasa"
+        android:hint="Telepon atau email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></EditText>
+
+    <EditText
+        android:inputType="textPassword"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:paddingLeft="7dp"
+        android:paddingBottom="18dp"
+        android:layout_below="@+id/username"
+        android:id="@+id/password"
+        android:hint="Kata Sandi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></EditText>
+
+    <Button
+        android:letterSpacing="0"
+        android:textAllCaps="false"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:background="@drawable/button_login"
+        app:backgroundTint="@null"
+        android:backgroundTintMode="@null"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_below="@+id/password"
+        android:text="Masuk"
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"></Button>
+
+    <TextView
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:textColor="#007AFC"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/btnLogin"
+        android:text="Lupa Kata Sandi?"
+        android:id="@+id/lupaPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+
+    <TextView
+        android:textSize="13dp"
+        android:layout_marginTop="40dp"
+        android:textAlignment="center"
+        android:textColor="#66676A"
+        android:layout_below="@+id/lupaPassword"
+        android:id="@+id/atau"
+        android:text="ATAU"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+
+    <View
+
+        android:layout_width="350dp"
+        android:layout_height="1px"
+        android:layout_below="@+id/lupaPassword"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="40dp"
+        android:background="#CBCCD0"
+        android:visibility="visible"></View>
+
+    <Button
+        android:background="@drawable/button_register"
+        android:backgroundTintMode="@null"
+        app:backgroundTint="@null"
+        android:letterSpacing="0"
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/atau"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="70dp"
+        android:text="Buat Akun Facebook Baru"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"
+        android:textStyle="bold"></Button>
+
+</RelativeLayout>
