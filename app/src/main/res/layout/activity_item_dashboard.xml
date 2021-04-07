@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ItemDashboard"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="@drawable/box"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <ImageView
+            android:id="@+id/team"
+            android:src="@drawable/team"
+            android:layout_width="30dp"
+            android:layout_height="30dp">
+        </ImageView>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/tittle"
+            android:gravity="center"
+            android:layout_below="@+id/team"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:text="Teman"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>
+
+</LinearLayout>

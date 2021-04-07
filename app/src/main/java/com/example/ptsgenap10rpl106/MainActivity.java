@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String ambilUsername = username.getText().toString().trim();
             String ambilPassword = password.getText().toString().trim();
 
-            if (ambilUsername.equalsIgnoreCase("BryanAlthafano") && ambilPassword.equalsIgnoreCase("BryanAlthafano")) {
+            if (ambilUsername.equalsIgnoreCase("Bryan") && ambilPassword.equalsIgnoreCase("Bryan")) {
                 Toast.makeText(this, "Succes Login", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, SuccesActivity.class);
+                Intent intent = new Intent(MainActivity.this, Menu.class);
                 startActivity(intent);
             } else{
                 Toast.makeText(this, "Your Username or Password Wrong", Toast.LENGTH_SHORT).show();
