@@ -8,31 +8,51 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:background="@drawable/box"
-        android:orientation="vertical"
-        android:gravity="center"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="80dp">
 
         <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
             android:id="@+id/team"
             android:src="@drawable/team"
             android:layout_width="30dp"
             android:layout_height="30dp">
         </ImageView>
 
-        <TextView
-            android:layout_marginTop="5dp"
-            android:id="@+id/tittle"
-            android:gravity="center"
-            android:layout_below="@+id/team"
-            android:textSize="15dp"
-            android:textColor="@color/black"
-            android:text="Teman"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </TextView>
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <TextView
+                android:id="@+id/tittle"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Teman"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold">
+            </TextView>
+
+            <TextView
+                android:textStyle="normal"
+                android:textColor="@color/agakPutih"
+                android:id="@+id/tittle2"
+                android:layout_marginLeft="10dp"
+                android:textSize="10dp"
+                android:text="Lihat teman"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

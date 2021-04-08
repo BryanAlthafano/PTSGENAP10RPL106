@@ -11,7 +11,6 @@
         android:theme="@style/Theme.PTSGENAP10RPL106">
         <activity android:name=".Menu"></activity>
         <activity android:name=".ItemDashboard" />
-        <activity android:name=".SuccesActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

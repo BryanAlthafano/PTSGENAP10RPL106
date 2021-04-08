@@ -1,10 +1,14 @@
 package com.example.ptsgenap10rpl106;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,50 +35,54 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
     public void onBindViewHolder(@NonNull DashboardAdapter.DashboardHolder holder, int position) {
 
         final SetterGetter getData = listData.get(position);
-        String tittleMenu = getData.getTitle();
+        String tittleMenu = getData.getTittle();
+        String tittleMenu2 = getData.getTittle2();
         String logoMenu = getData.getImg();
 
         holder.titleMenu.setText(tittleMenu);
-        if (logoMenu.equals("logoMenu1")){
+        holder.titleMenu2.setText(tittleMenu2);
+        if (logoMenu.equals("video")){
             holder.imgMenu.setImageResource(R.drawable.video);
-        }else if (logoMenu.equals("logoMenu2")){
+        }else if (logoMenu.equals("group")){
             holder.imgMenu.setImageResource(R.drawable.group);
-        }else if (logoMenu.equals("logoMenu3")){
+        }else if (logoMenu.equals("team")){
             holder.imgMenu.setImageResource(R.drawable.team);
-        }else if (logoMenu.equals("logoMenu4")){
+        }else if (logoMenu.equals("game")){
             holder.imgMenu.setImageResource(R.drawable.game);
-        }else if (logoMenu.equals("logoMenu5")){
+        }else if (logoMenu.equals("market")){
             holder.imgMenu.setImageResource(R.drawable.market);
-        }else if (logoMenu.equals("logoMenu6")){
+        }else if (logoMenu.equals("acara")){
             holder.imgMenu.setImageResource(R.drawable.acara);
-        }else if (logoMenu.equals("logoMenu7")){
+        }else if (logoMenu.equals("kenangan")){
             holder.imgMenu.setImageResource(R.drawable.kenangan);
-        }else if (logoMenu.equals("logoMenu8")){
+        }else if (logoMenu.equals("bantuan")){
             holder.imgMenu.setImageResource(R.drawable.bantuan);
-        }else if (logoMenu.equals("logoMenu9")){
+        }else if (logoMenu.equals("pengaturan")){
             holder.imgMenu.setImageResource(R.drawable.pengaturan);
-        }else if (logoMenu.equals("logoMenu10")){
+        }else if (logoMenu.equals("keluar")){
             holder.imgMenu.setImageResource(R.drawable.keluar);
         }
-
-
     }
 
     @Override
     public int getItemCount() {
+
         return listData.size();
     }
 
     public class DashboardHolder extends RecyclerView.ViewHolder {
 
-        TextView titleMenu;
+        TextView titleMenu, titleMenu2;
         ImageView imgMenu;
 
         public DashboardHolder(@NonNull View itemView) {
             super(itemView);
 
             titleMenu = itemView.findViewById(R.id.tittle);
+            titleMenu2 = itemView.findViewById(R.id.tittle2);
             imgMenu = itemView.findViewById(R.id.team);
         }
     }
+
+
 }
