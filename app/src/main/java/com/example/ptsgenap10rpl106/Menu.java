@@ -2,11 +2,15 @@ package com.example.ptsgenap10rpl106;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AutoCompleteTextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -16,7 +20,6 @@ public class Menu extends AppCompatActivity {
     ArrayList<SetterGetter> dataMenu;
     GridLayoutManager gridLayoutManager;
     DashboardAdapter adapter;
-    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +31,16 @@ public class Menu extends AppCompatActivity {
         addData();
         gridLayoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(gridLayoutManager);
-        adapter = new DashboardAdapter(dataMenu);
+        adapter = new DashboardAdapter(dataMenu, new DashboardAdapter.Callback() {
+            @Override
+            public void onClick(int position) {
+                Toast.makeText(Menu.this, "Click Item "+position, Toast.LENGTH_SHORT).show();
+                Intent move = new Intent(getApplicationContext(), DetailActivity.class);
+                SetterGetter tampil = dataMenu.get(position);
+                move.putExtra("nama", tampil.getTittle());
+                startActivity(move);
+            }
+        });
         recyclerView.setAdapter(adapter);
     }
 

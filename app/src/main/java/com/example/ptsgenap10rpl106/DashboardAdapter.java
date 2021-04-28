@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -15,12 +16,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import javax.security.auth.callback.Callback;
+
 public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.DashboardHolder> {
 
     private ArrayList<SetterGetter> listData;
+    private Callback callback;
 
-    public DashboardAdapter(ArrayList<SetterGetter> listData){
+    interface Callback {
+        void onClick(int posotion);
+    }
+
+    public DashboardAdapter(ArrayList<SetterGetter> listData , Callback callback) {
         this.listData = listData;
+        this.callback = callback;
     }
 
     @NonNull
@@ -74,6 +83,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
 
         TextView titleMenu, titleMenu2;
         ImageView imgMenu;
+        LinearLayout linearLayout;
 
         public DashboardHolder(@NonNull View itemView) {
             super(itemView);
@@ -81,6 +91,13 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
             titleMenu = itemView.findViewById(R.id.tittle);
             titleMenu2 = itemView.findViewById(R.id.tittle2);
             imgMenu = itemView.findViewById(R.id.team);
+            linearLayout = itemView.findViewById(R.id.linearLayout);
+            linearLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    callback.onClick(getAdapterPosition());
+                }
+            });
         }
     }
 
